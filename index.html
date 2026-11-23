@@ -7,8 +7,9 @@
   <title>AI Photo Lab · Swisscom</title>
   <link rel="icon" href="App%20Icon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="confirmation.css">
 </head>
-<body class="offer-page">
+<body class="offer-page" data-operator="swisscom">
   <header class="site-header">
     <div class="site-bar">
       <a class="brand" href="index.html">
@@ -36,9 +37,9 @@
           <img src="App%20Icon.png" width="45" height="45" alt="">
           <h1>Erwecken Sie Ihre Fotos<br>mit <span class="title-accent">KI!</span></h1>
         </div>
-        <form class="offer-form" action="https://stage.photo-lab.ai/al/12345" method="get">
+        <form class="offer-form" action="confirmation.html" method="get">
           <label for="phone-number">Geben Sie Ihre Telefonnummer ein:</label>
-          <input id="phone-number" type="tel" autocomplete="tel" placeholder="XXX XX XX XX" required>
+          <input id="phone-number" data-invalid="Bitte geben Sie eine gültige Telefonnummer ein." type="tel" autocomplete="tel" placeholder="XXX XX XX XX" required>
           <button class="primary-cta" type="submit" aria-describedby="price">Weiter</button>
           <p id="price" class="price">15 CHF pro Woche + mobile Datengebühren</p>
         </form>
@@ -58,5 +59,17 @@
       <p>MOBYRION SAS</p>
     </div>
   </footer>
+  <dialog class="confirmation-dialog" id="subscription-confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-instruction confirmation-price">
+    <div class="confirmation-card">
+      <button class="confirmation-close" type="button" data-close-confirmation aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <img class="confirmation-logo" src="Logo%20container.png" width="98" height="17" alt="AI Photo Lab">
+      <h2 class="confirmation-heading" id="confirmation-title" tabindex="-1" autofocus>Abonnement bestätigen</h2>
+      <p class="confirmation-instruction" id="confirmation-instruction"><span class="confirmation-command">Senden Sie</span><span class="confirmation-destination"><span class="sms-emphasis">START ABO</span> an <span class="sms-emphasis">995</span></span></p>
+      <p class="confirmation-price" id="confirmation-price">15 CHF pro Woche</p>
+      <a class="primary-cta" id="open-confirmation-sms" href="sms:995">SMS öffnen</a>
+      <div class="confirmation-details"><p><span data-confirmation-billing>3 SMS pro Woche à 5 CHF.</span><br>SMS- und Datenkosten gemäß Ihrem Mobilfunktarif.</p><p>Automatisch verlängertes Abo. Kündigung: STOP an 995.<br>MOBYRION SAS · <a href="tel:+41225180470">+41 22 518 04 70</a></p></div>
+    </div>
+  </dialog>
+  <script src="confirmation.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+
+html.confirmation-visible{overflow:hidden}
+.confirmation-dialog{--sms-size:clamp(25px,7vw,34px);--sms-weight:700;position:fixed;inset:0;height:fit-content;margin:auto;padding:0;border:1px solid #ffffff12;border-radius:24px;width:min(520px,calc(100% - 24px));max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;color:#f3f5f8;background:linear-gradient(180deg,rgba(17,44,73,.91),rgba(13,28,39,.91) 57%,rgba(21,21,21,.95));backdrop-filter:blur(18px);box-shadow:0 25px 90px #0009}
+.confirmation-dialog:not([open]){display:none}
+.confirmation-dialog::backdrop{background:rgba(2,6,11,.60);backdrop-filter:blur(2px)}
+.confirmation-card{position:relative;padding:30px 8px 25px;text-align:center}
+.confirmation-close{position:absolute;top:7px;right:7px;display:grid;place-items:center;width:44px;height:44px;padding:10px;border:0;border-radius:0;background:transparent;color:#f3f5f8;cursor:pointer;text-decoration:none}
+.confirmation-close:hover{background:transparent;color:white}
+.confirmation-close svg{width:24px;height:24px}
+.confirmation-logo{display:block;width:112px;max-width:50%;height:auto;margin:0 auto 24px}
+.confirmation-heading{margin:0 12px 26px;color:#f3f5f8;font-size:20px;font-weight:400;line-height:1.35;letter-spacing:-.01em;text-wrap:balance}
+.confirmation-instruction{margin:0 12px 12px;color:#f3f5f8;font-size:var(--sms-size);font-weight:var(--sms-weight);line-height:1.16;letter-spacing:-.025em}
+.confirmation-command,.confirmation-destination{display:block}
+.confirmation-destination{white-space:nowrap}
+.confirmation-instruction .sms-emphasis,.confirmation-price{font-size:var(--sms-size);font-weight:var(--sms-weight);line-height:1.16}
+.confirmation-instruction .sms-emphasis{color:#209cff}
+.confirmation-price{color:#aeb9c6;font-size:14px;font-weight:400;margin:0 12px 30px;letter-spacing:0}
+.confirmation-card .primary-cta{width:100%;max-width:none;min-height:62px;font-size:22px;font-weight:700;padding:16px 18px;background:linear-gradient(105deg,#1670ff,#1ab5ed);animation:none;box-shadow:none}
+.confirmation-card .primary-cta::after{display:none;animation:none}
+.confirmation-details{margin:38px 12px 0;color:#a7b3c1;font-size:14px;line-height:1.35;text-wrap:pretty}
+.confirmation-details p{margin:0 0 15px}
+.confirmation-details p:last-child{margin-bottom:0}
+.confirmation-details a{color:inherit;white-space:nowrap}
+@media(max-width:350px){.confirmation-dialog{--sms-size:24px;width:calc(100% - 20px)}.confirmation-heading{font-size:19px}.confirmation-details{margin-inline:8px}}
+@media(prefers-reduced-motion:no-preference){.confirmation-dialog[open]{animation:confirmation-enter .18s ease-out}@keyframes confirmation-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
+
+.confirmation-card .primary-cta{animation:confirmation-cta-pulse 3.2s ease-in-out infinite}
+.confirmation-card .primary-cta::after{display:block;background:linear-gradient(90deg,transparent,#ffffff30,transparent);animation:cta-shine 3.2s ease-in-out infinite}
+@keyframes confirmation-cta-pulse{0%,100%{scale:1;box-shadow:0 0 0 #128fff00}50%{scale:1.018;box-shadow:0 6px 24px #128fff33}}
+@media(prefers-reduced-motion:reduce){.confirmation-card .primary-cta,.confirmation-card .primary-cta::after{animation:none}.confirmation-card .primary-cta::after{display:none}}
+
+.confirmation-heading:focus{outline:none}
+.confirmation-close:focus-visible{outline:2px solid #9de6ff;outline-offset:-4px}

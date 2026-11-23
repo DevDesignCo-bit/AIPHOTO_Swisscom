@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101318">
+  <title>Abonnement bestätigen | AI Photo Lab</title>
+  <link rel="icon" href="App%20Icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="confirmation.css">
+</head>
+<body class="offer-page" data-operator="swisscom" data-confirmation-entry="true">
+  <header class="site-header">
+    <div class="site-bar">
+      <a class="brand" href="index.html">
+        <img src="Logo%20container.png" width="98" height="17" alt="AI Photo Lab">
+      </a>
+      <nav class="languages" aria-label="Sprache"><a href="index.html" hreflang="de-CH" lang="de" aria-current="page">DE</a> <a href="index-fr.html" hreflang="fr-CH" lang="fr">FR</a></nav>
+    </div>
+  </header>
+  <main class="landing">
+    <section class="hero">
+      <div class="media" aria-hidden="true">
+        <div class="media-frame">
+          <video muted loop playsinline preload="metadata" poster="hero-poster.jpg" disablepictureinpicture>
+            <source src="hero-loop.mp4" type="video/mp4">
+          </video>
+          <img class="media-poster" src="hero-poster.jpg" alt="">
+          <img class="step-indicators" src="Step%20Indicators.png" width="46" height="91" alt="">
+        </div>
+        <div class="portrait">
+          <img src="JPG.png" width="128" height="127" alt="">
+        </div>
+      </div>
+      <div class="hero-copy">
+        <div class="offer-heading">
+          <img src="App%20Icon.png" width="45" height="45" alt="">
+          <h1>Erwecken Sie Ihre Fotos<br>mit <span class="title-accent">KI!</span></h1>
+        </div>
+        <form class="offer-form" action="confirmation.html" method="get">
+          <label for="phone-number">Geben Sie Ihre Telefonnummer ein:</label>
+          <input id="phone-number" data-invalid="Bitte geben Sie eine gültige Telefonnummer ein." type="tel" autocomplete="tel" placeholder="XXX XX XX XX" required>
+          <button class="primary-cta" type="submit" aria-describedby="price">Weiter</button>
+          <p id="price" class="price">15 CHF pro Woche + mobile Datengebühren</p>
+        </form>
+      </div>
+    </section>
+    <div class="disclaimer">
+      <p>AI Photo Lab ist ein Abo zur Bearbeitung von Fotos und Videos mit KI. Das Abo verlängert sich automatisch. Swisscom verrechnet 3 × 5 CHF pro Woche über Ihre Mobilfunkrechnung oder zieht die Beträge von Ihrem Prepaid-Guthaben ab. Für die mobile Datennutzung können zusätzliche Gebühren anfallen.</p>
+      <p>Für den Abschluss müssen Sie mindestens 18 Jahre alt und Inhaberin oder Inhaber des Mobilfunkkontos sein oder die ausdrückliche Erlaubnis der kontoinhabenden Person haben.</p>
+      <p>Kündigung jederzeit per SMS mit STOP an 995.</p>
+      <p>Kundendienst: <a href="tel:+41225180470">+41 22 518 04 70</a> · <a href="mailto:schweiz@mob.support">schweiz@mob.support</a><br>Anbieter: MOBYRION SAS, 8. Arrondissement, Paris, Frankreich. SIREN-Nummer: 934 316 720.</p>
+    </div>
+  </main>
+  <script src="media.js" defer></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Weitere Informationen"><a href="agb.html">AGB</a> <a href="impressum.html">Impressum</a> <a href="faq.html">FAQ</a> <a href="kontakt.html">Kontakt</a></nav>
+      <p>MOBYRION SAS</p>
+    </div>
+  </footer>
+  <dialog class="confirmation-dialog" id="subscription-confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-instruction confirmation-price">
+    <div class="confirmation-card">
+      <button class="confirmation-close" type="button" data-close-confirmation aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <img class="confirmation-logo" src="Logo%20container.png" width="98" height="17" alt="AI Photo Lab">
+      <h2 class="confirmation-heading" id="confirmation-title" tabindex="-1" autofocus>Abonnement bestätigen</h2>
+      <p class="confirmation-instruction" id="confirmation-instruction"><span class="confirmation-command">Senden Sie</span><span class="confirmation-destination"><span class="sms-emphasis">START ABO</span> an <span class="sms-emphasis">995</span></span></p>
+      <p class="confirmation-price" id="confirmation-price">15 CHF pro Woche</p>
+      <a class="primary-cta" id="open-confirmation-sms" href="sms:995">SMS öffnen</a>
+      <div class="confirmation-details"><p><span data-confirmation-billing>3 SMS pro Woche à 5 CHF.</span><br>SMS- und Datenkosten gemäß Ihrem Mobilfunktarif.</p><p>Automatisch verlängertes Abo. Kündigung: STOP an 995.<br>MOBYRION SAS · <a href="tel:+41225180470">+41 22 518 04 70</a></p></div>
+    </div>
+  </dialog>
+  <script src="confirmation.js" defer></script>
+</body>
+</html>
